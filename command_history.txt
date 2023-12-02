@@ -1,0 +1,234 @@
+    1  exit
+    2  nano my_task.sh
+    3  chmod +x my_task.sh
+    4  crontab -e
+    5  vim crontab -e
+    6  crontab -e
+    7  crontab -l
+    8  iptables -L -nv
+    9  iptables -A INPUT -p tcp --dport=22 -j ACCEPT
+   10  iptables -L -nv
+   11  iptables -A INPUT -p tcp --dport=80 -j ACCEPT
+   12  iptables -A INPUT -p tcp --dport=443 -j ACCEPT
+   13  iptables -L -nv
+   14  iptables -A INPUT -i lo -j ACCEPT
+   15  iptables -L -nv
+   16  iptables -I -n state --state ESTABLISHED,RELATED -j ACCEPT
+   17  iptables -I INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+   18  iptables -L -nv
+   19  iptables -A INPUT -p icmp -j ACCEPT
+   20  iptables -L -nv
+   21  iptables -P INPUT DROP
+   22  iptables -L -nv
+   23  sudo nano /etc/netplan/01-network.yaml
+   24  apt install nginx
+   25  ss -ntlp
+   26  curl localhost
+   27  apt curl install
+   28  apt  install curl  # version 7.81.0-1ubuntu1.13
+   29  curl localhost
+   30  cd/etc/nginx
+   31  cd /etc/nginx
+   32  ll
+   33  nano nginx.conf
+   34  nginx -t
+   35  systemctl reload nginx
+   36  ll
+   37  cd sit
+   38  apt install apache2
+   39  cd /etc/apache2
+   40  ll
+   41  nano ports.conf
+   42  apachectl -t
+   43  systemctl start apache2
+   44  systemctl status apache2
+   45  ll
+   46  cd site-enabled
+   47  cd sites-enabled
+   48  ll
+   49  nano 000-default.conf 
+   50  apachectl -t
+   51  systemctl reload apache2
+   52  curl localhost
+   53  sudo apt update
+   54  sudo apt install apt-transport-https ca-certificates curl software-properties-common
+   55  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+   56  echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+   57  sudo apt update
+   58  sudo apt-key del 573BFD6B3D8FBC641079A6ABABF5BD827BD9BF62
+   59  curl -fsSL https://nginx.org/keys/nginx_signing.key | sudo gpg --dearmor -o /usr/share/keyrings/nginx-archive-keyring.gpg
+   60  sudo apt update
+   61  apt list --upgradable
+   62  sudo apt install docker-ce
+   63  sudo usermod -aG docker $USER
+   64  docker --version
+   65  sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+   66  sudo chmod +x /usr/local/bin/docker-compose
+   67  docker-compose --version
+   68  nano docker-compose.yml
+   69  mkdir db_data
+   70  docker-compose up -d
+   71  ip addr show
+   72  docker-compose.yml
+   73  nano docker-compose.yml
+   74  docker-compose up -d
+   75  nano docker-compose.yml
+   76  дд
+   77  ll
+   78  nano docker-compose.yml
+   79  mkdir db_data
+   80  docker-compose up -d
+   81  docker ps -a
+   82  docker logs myphpmyadmin
+   83  docker-compose restart phpmyadmin
+   84  nano docker-compose.yml
+   85  docker-compose restart phpmyadmin
+   86  nano docker-compose.yml
+   87  sudo systemctl stop apache2
+   88  docker-compose restart phpmyadmin
+   89  sudo systemctl stop apache2
+   90  sudo systemctl stop nginx
+   91  docker-compose restart phpmyadmin
+   92  sudo netstat -tuln | grep 8080
+   93  sudo ss -tuln | grep 8080
+   94  sudo lsof -i :8080
+   95  docker stop 3833
+   96  docker stop $(docker ps -q --filter "name=docker-pr")
+   97  docker stop docker-pr
+   98  docker ps -a --filter "expose=8080"
+   99  nano cleanup_directory.sh
+  100  nano #!/bin/bash
+  101  # Проверка наличия аргумента (пути к директории)
+  102  if [ $# -eq 0 ]; then     echo "Ошибка: Укажите путь к директории в качестве аргумента.";     exit 1; fi
+  103  mkdir GB
+  104  chroot GB /bin/bash
+  105  ls GB
+  106  mkdir GB/bin
+  107  cp /bin/bash GB/bin
+  108  chroot GB /bin/bash
+  109  ldd /bin/bash
+  110  mkdir GB/lib
+  111  mkdir GB/lib64
+  112  cp lib/x86_64-linux-gnu/libc.so.6 GB/lib
+  113  cp lib/x86_64-linux-gnu/libtinfo.so.6 GB/lib
+  114  cp /lib/x86_64-linux-gnu/libt
+  115  cp lib/x86_64-linux-gnu/libc.so.6 GB/lib
+  116  ip -a
+  117  ping localhost
+  118  ip link set dev lo up
+  119  ip -a
+  120  ping localhost
+  121  exit
+  122  ip addr add 10.0.0.2/24 dev veth1
+  123  ip link set dev veth1 up
+  124  ip a
+  125  ping 10.0.0.1
+  126  ping 10.0.0.2
+  127  ping 10.0.0.1
+  128  exit
+  129  ip a
+  130  exit
+  131  ps aux
+  132  sudo lxc launch ubuntu:20.04 my-container
+  133  lsb_release -a
+  134  sudo lxc launch ubuntu:22.04.3 my-container
+  135  sudo apt update
+  136  sudo apt install lxc
+  137  sudo lxc launch ubuntu:22.04.3 my-container
+  138  sudo lxd init
+  139  sudo apt install lxd
+  140  sudo add-apt-repository ppa:ubuntu-lxc/lxd-stable
+  141  sudo apt update
+  142  sudo apt install lxd
+  143  sudo snap install lxd
+  144  sudo lxd init
+  145  lxc network list
+  146  lxc network create my-bridge ipv4.address=auto ipv4.nat=true ipv6.address=none ipv6.nat=false
+  147  lxc launch ubuntu:22.04 --vm --network my-bridge
+  148  sudo apt install htop
+  149  htop
+  150  docker ps
+  151  sudo apt update
+  152  sudo apt-get install docker-compose
+  153  mkdir web
+  154  cd web
+  155  nano nano docker-compose.yml
+  156  ll
+  157  nano docker-compose.yml
+  158  touch docker-compose.dev.yml
+  159  touch docker-compose.prod.yml
+  160  touch docker-compose.lab.yml
+  161  nano docker-compose.dev.yml
+  162  nano docker-compose.prod.yml
+  163  nano docker-compose.lab.yml
+  164  docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d
+  165  nano docker-compose.yml
+  166  nano docker-compose.dev.yml
+  167  docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d
+  168  nano docker-compose.yml
+  169  docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d
+  170  nano docker-compose.yml
+  171  docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d
+  172  nano docker-compose.lab.yml
+  173  docker-compose -f docker-compose.yml -f docker-compose.lab.yml up -d
+  174  nano docker-compose.prod.yml
+  175  docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d
+  176  docker ps
+  177  ifconfig
+  178  ip a
+  179  sudo docker ps -a
+  180  sudo docker-compose up -d
+  181  sudo docker-compose top
+  182  sudo docker-compose images
+  183  docker ps
+  184  ssh nesterenko@192.168.0.21
+  185  sudo cp Pets.txt PackAnimals.txt "Human Friends.txt" /Ubuntu
+  186  cat > Pets.txt
+  187  cat HumanFriends.txt
+  188  ls
+  189  sudo cp Pets.txt PackAnimals.txt "Human Friends.txt" /Ubuntu
+  190  cd /Ubuntu
+  191  git add .
+  192  git commit -m "Добавление файлов с домашними и вьючными животными"
+  193  git config --global user.email nesteronok@gmail.com
+  194  git config --global user.name nester1504
+  195  git push origin master
+  196  echo "# Ubuntu" >> README.md
+  197  git remote add origin https://github.com/nester1504/Ubuntu.git
+  198  git branch -M main
+  199  git push -u origin main
+  200  git clone https://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@github.com/nester1504/Ubuntu.git
+  201  git commit -m "Добавление файлов с домашними и вьючными животными"
+  202  git add .
+  203  git push
+  204  git checkout -b main
+  205  git add .
+  206  git remote set-url origin https://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@github.com/nester1504/Ubuntu.git
+  207  git push origin main
+  208  mkdir Animals
+  209  mv "Human Friends.txt" Animals/
+  210  ls Animals
+  211  git add Animals
+  212  git commit -m "Перемещение файла Human Friends.txt в директорию Animals"
+  213  git push origin main
+  214  sudo apt-get update
+  215  sudo apt-get install software-properties-common
+  216  sudo add-apt-repository mysql-apt-config
+  217  sudo apt-get update
+  218  sudo add-apt-repository 'deb http://repo.mysql.com/apt/ubuntu/ focal mysql-apt-config'
+  219  sudo apt-get update
+  220  sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 467B942D3A79BD29
+  221  sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys ABF5BD827BD9BF62
+  222  sudo apt-get update
+  223  gpg --keyserver keyserver.ubuntu.com --recv-keys 467B942D3A79BD29
+  224  gpg --export --armor 467B942D3A79BD29 | sudo apt-key add -
+  225  gpg --keyserver keyserver.ubuntu.com --recv-keys ABF5BD827BD9BF62
+  226  gpg --export --armor ABF5BD827BD9BF62 | sudo apt-key add -
+  227  sudo apt-get update
+  228  sudo apt-get install mysql-server
+  229  sudo systemctl status mysql
+  230  sudo dpkg -i example.deb
+  231  wget http://archive.ubuntu.com/ubuntu/pool/main/w/wget/wget_1.21.3-1ubuntu1_amd64.deb
+  232  sudo dpkg -i wget_1.21.3-1ubuntu1_amd64.deb
+  233  sudo apt-get remove wget
+  234  history > command_history.txt
